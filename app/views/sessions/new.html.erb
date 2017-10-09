@@ -1,0 +1,42 @@
+<div class="user-form">
+    <div class="form-title">LOGIN</div>
+    <div class="sign-up-switch-button">+</div>
+    <div class="sign-in-switch-button">x</div>
+
+    <div class="sign-in-form">
+    	<%= form_for :session, url: "/login" do |f| %>
+                <div class="sign-in-email">
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="sign-in-password">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="sign-in-submit-btn">
+                	<button type="submit" disabled>GO</button>
+                </div>
+        <% end %>
+    </div>
+    <div class="sign-up-form">
+        <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
+            <div class="sign-up-email">
+                <%= f.text_field :email, class: "form-control", placeholder: "Enter your email" %>
+            </div>
+            <div class="sign-up-username">
+                <%= f.text_field :name, class: "form-control", placeholder: "Choose username" %>
+            </div>
+            <div class="sign-up-password">
+                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+            </div>
+            <div class="sign-up-password">
+                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password " %>
+            </div>
+            <div class="sign-up-submit-btn">
+                <%= f.submit "NEXT", class: "btn btn-success" %>
+            </div>
+            <% end %>
+    </div>
+    <% if @noti %>
+    	<div class="noti"><%= @noti %></div>
+    <%end%>
+</div>
+<script type="text/javascript" src="/user.js"></script>

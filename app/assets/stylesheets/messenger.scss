@@ -1,0 +1,102 @@
+// Place all the styles related to the messenger controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main{
+	max-width: 800px !important;
+}
+.chat-main{
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    height: 600px;
+    margin-top: 100px;
+    display: flex;
+}
+.left-menu{
+    background: #f3f6fc;
+    width: 30%;
+    height: 100%;
+    padding: 20px 0px;
+}
+.form-switch-button{
+    display: flex;
+    padding: 10px;
+}
+.switch-active{
+    background: #8DCBF4 !important;
+    color: #fff !important;
+}
+.switch-alluser{
+	width: 50%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+    border-radius: 0px 3px 3px 0px;
+    border: 1px solid #8DCBF4;
+    color: #8DCBF4;
+    cursor: pointer;
+}
+.switch-friends{
+	width: 50%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+    border-radius: 3px 0px 0px 3px;
+    border: 1px solid #8DCBF4;
+    color: #8DCBF4;
+    cursor: pointer;
+}
+.name-of-app{
+    text-align: center;
+    font-size: 20px;
+    color: #8dcaf4;
+}
+.right-menu{
+    padding: 20px 0;
+    width: 70%;
+    height: 100%;
+    background: #fff;
+}
+
+.current-user{
+
+    text-align: center;
+    color: #f1648f;
+
+}
+.friend-list{
+    height: 80%;
+    overflow: scroll;
+}
+.friend-item{
+    padding: 10px 30px;
+    color: #adb9c3;
+    cursor: pointer;
+        height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+.friend-avatar{
+	line-height: 30px;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #8DCBF4;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 10px;
+}
+.friend-selected, .friend-item:hover{
+    background: #eaeff3;
+
+}
+.alluser-list{
+	display: none;
+	height: 80%;
+    overflow: scroll;
+}
+
+

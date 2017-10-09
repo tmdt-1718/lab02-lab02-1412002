@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+  friend = Friend.create([
+  	{usera:6, userb:2},
+  	{usera:6, userb:7},
+  	{usera:6, userb:2},
+  	{usera:6, userb:7},
+  	{usera:6, userb:2},
+  	{usera:6, userb:7},
+  	{usera:6, userb:7},
+  	{usera:6, userb:2},
+  	{usera:6, userb:2},
+  	{usera:6, userb:7},
+  	{usera:6, userb:2},
+  	])

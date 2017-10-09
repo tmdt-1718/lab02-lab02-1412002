@@ -1,0 +1,148 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-form{
+	margin-top: 200px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 0 5px 0;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px #ddd;
+        position: relative;
+
+}
+body{
+	background: url(/background.png) no-repeat center;
+}
+.form-title{
+    padding: 5px 20px;
+    font-size: 25px;
+    color: #EE2754;
+    border-left: 4px solid #EE2754;
+}
+.sign-in-form {
+	padding: 20px;
+}
+.sign-in-form .sign-in-email{
+	    padding: 10px;
+
+}
+.sign-in-form .sign-in-password{
+	    padding: 10px;
+
+
+}
+.sign-in-form input{
+outline: none;
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-bottom: 1px solid #e2e2e2;
+
+}
+.sign-in-form input:focus{
+    border-bottom: 2px solid #EE2754;
+
+}
+.sign-in-form .sign-in-submit-btn{
+	text-align: center;
+	    padding: 10px;
+
+}
+.sign-in-form button{
+height: 40px;
+    width: 150px;
+    border: 2px solid #e2e2e2;
+    background: #fff;
+    font-size: 20px;
+    color: #e2e2e2;
+    border-radius: 2px;
+}
+.active-button{
+    border: 2px solid #EE2754 !important;
+    color: #EE2754 !important;
+    cursor: pointer;
+}
+.active-button:hover{
+    background: #EE2754 !important;
+    color: #fff !important;
+}
+.noti{
+	margin: 5px 20px 10px 20px;
+    background: #EE2754;
+    text-align: center;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 2px;
+    line-height: 30px;
+    color: #fff;
+}
+.sign-up-switch-button{
+
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    right: -30px;
+    top: 10px;
+    border-radius: 50%;
+    background: #ee2854;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+
+}
+.sign-in-switch-button{
+	position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 30px;
+    color: #ee2a54;
+    text-align: center;
+    line-height: 37px;
+    cursor: pointer;
+}
+.sign-in-switch-button:hover{
+    box-shadow: 0 0 20px #fff;
+
+}
+.sign-up-switch-button:hover{
+    box-shadow: 0 0 20px #ee2854;
+
+}
+.sign-up-form{
+	display: none;
+	padding: 20px;
+}
+.sign-up-form input{
+	outline: none;
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.sign-up-form .sign-up-email, .sign-up-form .sign-up-username , .sign-up-form .sign-up-password , .sign-up-form .sign-up-submit-btn{
+	    padding: 10px;
+
+}
+.inputquai::-webkit-input-placeholder {
+    color: #fff
+}
+
+.sign-up-submit-btn{
+	    text-align: center;
+
+}
+.sign-in-switch-button{
+	display: none;
+}

@@ -1,0 +1,43 @@
+<script type="text/javascript" src="/messenger.js"></script>
+<div class="chat-main">
+	<div class="left-menu">
+		<div class="name-of-app">Sweet Chat</div>
+		<div class="current-user"><%= @user = User.find(session[:user_id]).name  %></div>
+		<div class="form-switch-button">
+			<div class="switch-friends switch-active">
+				Friends
+			</div>
+			<div class="switch-alluser">
+				All
+			</div>
+		</div>
+		<div class="friend-list">
+			<% @friend.each do |key| %>
+				<% @user = User.find(key.userb).name %>
+				<div class="friend-item">
+					<div class="friend-avatar">
+						<%= @user[0].upcase %>
+					</div>
+					<div class="friend-name">
+						<%= @user %>
+					</div>
+				</div>
+			<%end%>
+		</div>
+		<div class="alluser-list">
+			<% @alluser.each do |key| %>
+				<div class="friend-item">
+					<div class="friend-avatar">
+						<%= key.name[0].upcase %>
+					</div>
+					<div class="friend-name">
+						<%= key.name %>
+					</div>
+				</div>
+			<%end%>
+		</div>
+	</div>
+	<div class="right-menu">
+		
+	</div>
+</div>

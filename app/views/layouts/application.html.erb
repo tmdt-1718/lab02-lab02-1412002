@@ -3,12 +3,19 @@
   <head>
     <title>Lab02Lab021412002</title>
     <%= csrf_meta_tags %>
-
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.js"
+  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+  crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="font-family: 'Abel', sans-serif;">
+  	<div class="main">
+    	<%= yield %>
+  	</div>
   </body>
 </html>
