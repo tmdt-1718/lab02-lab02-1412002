@@ -1,10 +1,11 @@
 // Place all the styles related to the messenger controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main{
-	max-width: 800px !important;
+.main {
+    max-width: 800px !important;
 }
-.chat-main{
+
+.chat-main {
     width: 100%;
     max-width: 900px;
     background: #fff;
@@ -12,22 +13,26 @@
     margin-top: 100px;
     display: flex;
 }
-.left-menu{
+
+.left-menu {
     background: #f3f6fc;
     width: 30%;
     height: 100%;
     padding: 20px 0px;
 }
-.form-switch-button{
+
+.form-switch-button {
     display: flex;
     padding: 10px;
 }
-.switch-active{
+
+.switch-active {
     background: #8DCBF4 !important;
     color: #fff !important;
 }
-.switch-alluser{
-	width: 50%;
+
+.switch-alluser {
+    width: 50%;
     text-align: center;
     height: 30px;
     line-height: 30px;
@@ -37,8 +42,9 @@
     color: #8DCBF4;
     cursor: pointer;
 }
-.switch-friends{
-	width: 50%;
+
+.switch-friends {
+    width: 50%;
     text-align: center;
     height: 30px;
     line-height: 30px;
@@ -48,38 +54,42 @@
     color: #8DCBF4;
     cursor: pointer;
 }
-.name-of-app{
+
+.name-of-app {
     text-align: center;
     font-size: 20px;
     color: #8dcaf4;
 }
-.right-menu{
+
+.right-menu {
     padding: 20px 0;
     width: 70%;
     height: 100%;
     background: #fff;
 }
 
-.current-user{
+.current-user {
 
     text-align: center;
     color: #f1648f;
-
 }
-.friend-list{
+
+.friend-list {
     height: 80%;
     overflow: scroll;
 }
-.friend-item{
+
+.friend-item {
     padding: 10px 30px;
     color: #adb9c3;
     cursor: pointer;
-        height: 30px;
+    height: 30px;
     line-height: 30px;
     display: flex;
 }
-.friend-avatar{
-	line-height: 30px;
+
+.friend-avatar {
+    line-height: 30px;
     font-size: 24px;
     width: 30px;
     height: 30px;
@@ -89,14 +99,144 @@
     color: #fff;
     margin-right: 10px;
 }
-.friend-selected, .friend-item:hover{
-    background: #eaeff3;
 
+.friend-selected,
+.friend-item:hover {
+    background: #eaeff3;
 }
-.alluser-list{
-	display: none;
-	height: 80%;
+
+.alluser-list {
+    display: none;
+    height: 80%;
     overflow: scroll;
 }
 
+.friend-name {
+    width: 60%;
+    overflow: hidden;
+}
 
+/*.friend-add-remove {
+    display: none;
+    width: 18%;
+    text-align: center;
+    border-radius: 2px;
+}*/
+.friend-add {
+    display: none;
+    width: 18%;
+    text-align: center;
+    border-radius: 2px;
+    background: url(/add.png) no-repeat center;
+    background-size: cover;
+    opacity: 0.5;
+    position: relative;
+}
+.friend-remove {
+    display: none;
+    width: 18%;
+    text-align: center;
+    border-radius: 2px;
+    background: url(/del.png) no-repeat center;
+    background-size: cover;
+    opacity: 0.5;
+    position: relative;
+}
+
+.friend-remove:hover:after {
+    content: "Remove friend";
+    position: absolute;
+    top: 25px;
+    transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+    font-size: 11px;
+    width: max-content;
+    left: -50%;
+    height: 17px;
+    background: rgba(0, 0, 0, 0.6);
+    line-height: 17px;
+    padding: 0 3px;
+    border-radius: 2px;
+}
+.friend-add:hover:after {
+    content: "Add friend";
+    position: absolute;
+    width: max-content;
+    top: 25px;
+    transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+    font-size: 11px;
+    left: -30%;
+    height: 17px;
+    background: rgba(0, 0, 0, 0.6);
+    line-height: 17px;
+    padding: 0 3px;
+    border-radius: 2px;
+}
+
+.friend-add,.friend-remove:hover {
+    opacity: 1;
+}
+.friends-search{
+    padding: 0 10px 10px 10px;
+}
+.friends-search input{
+    width: calc(100% - 10px);
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #8dcaf4;
+    background: #f3f6fd;
+    padding: 0 5px;
+    color: #8dcaf4;
+    outline: none;
+}
+.friends-search input::-webkit-input-placeholder {
+    color: #adb9c3
+}
+
+.chat-input-form{
+
+}
+.chat-friend-form{
+    height: 15%;
+}
+.chat-contents-form{
+    height: 75%;
+}
+.chat-input-form{
+    height: 10%;
+    display: flex;
+}
+.chat-input-text{
+    width: 80%;
+    background: #F8FDFE;
+    border: 0px;
+    padding: 10px;
+    font-size: 16px;
+}
+.btn-send{
+    width: 15%;
+    background: #ddd;
+    text-align: center;
+    line-height: 2em;
+}
+.right-menu{
+    background: #F8FDFE;
+}
+.my-chat-class{
+    background: #eaeff3;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    text-align: left;
+}
+.friend-chat-class{
+    background: #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    text-align: right;
+    float: right;
+}

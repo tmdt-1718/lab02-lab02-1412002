@@ -2,7 +2,13 @@
 <div class="chat-main">
 	<div class="left-menu">
 		<div class="name-of-app">Sweet Chat</div>
-		<div class="current-user"><%= @user = User.find(session[:user_id]).name  %></div>
+		<div class="current-user">
+			<%@user = User.find(session[:user_id])  %>
+			<%= @user.name  %>
+			</div>
+		<div class="current-userid" style="display: none;">
+			<%= @user.id %>
+			</div>
 		<div class="form-switch-button">
 			<div class="switch-friends switch-active">
 				Friends
@@ -11,33 +17,67 @@
 				All
 			</div>
 		</div>
+		<div class="friends-search">
+			<input type="text" name="" placeholder="search a friend" class="input-search">
+		</div>
 		<div class="friend-list">
 			<% @friend.each do |key| %>
-				<% @user = User.find(key.userb).name %>
+				<% @user = User.find(key.userb) %>
 				<div class="friend-item">
+					<div class="friend-id" style="display: none;">
+						<%= @user.id %>
+					</div>
 					<div class="friend-avatar">
-						<%= @user[0].upcase %>
+						<%= @user.name[0].upcase %>
 					</div>
 					<div class="friend-name">
-						<%= @user %>
+						<%= @user.name %>
 					</div>
+					<div class="friend-remove">
+					</div>	
 				</div>
 			<%end%>
 		</div>
 		<div class="alluser-list">
 			<% @alluser.each do |key| %>
 				<div class="friend-item">
+					
 					<div class="friend-avatar">
 						<%= key.name[0].upcase %>
 					</div>
 					<div class="friend-name">
 						<%= key.name %>
 					</div>
+						<% @check = Friend.where(usera:session[:user_id],userb:key.id).take%>
+						<% if @check %>
+							<div class="friend-remove"></div>
+							<!-- DEL --> 
+						<% else %>
+							<div class="friend-add"></div>
+							<!-- ADD -->
+						<% end %>
 				</div>
 			<%end%>
 		</div>
 	</div>
 	<div class="right-menu">
-		
+		<div class="chat-friend-form">
+			<div class="current-friend-chat" style="display: none;">
+				<% @user = User.find(@friend[0].userb) %>
+				<%= @user.id %>
+			</div>
+			<div class="current-friend-name">
+				<%= @user.name %>
+			</div>
+
+			
+		</div>
+		<div class="chat-contents-form">
+			
+		</div>
+		<div class="chat-input-form">
+			<input type="text" name="" class="chat-input-text">
+			<div class="btn-send">Send</div>
+		</div>
 	</div>
 </div>

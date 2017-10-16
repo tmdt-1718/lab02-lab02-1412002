@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+    mount ActionCable.server => '/cable'
+
+  
   get     "login"    => "sessions#new"
   post    "login"    => "sessions#create"
-  delete  "logout"   => "sessions#destroy"
+  get  "logout"   => "sessions#destroy"
 
   	resources :users
 

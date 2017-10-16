@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   	def new
+      	if session[:user_id] 
+        	redirect_to "/messenger"
+      	end
     	@user = User.new
   	end
 
@@ -17,5 +20,7 @@ class SessionsController < ApplicationController
   	end
   	
   	def destroy
+  		log_out
+    	redirect_to login_path
  	end
 end

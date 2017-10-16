@@ -8,15 +8,6 @@
 
 
   friend = Friend.create([
-  	{usera:6, userb:2},
-  	{usera:6, userb:7},
-  	{usera:6, userb:2},
-  	{usera:6, userb:7},
-  	{usera:6, userb:2},
-  	{usera:6, userb:7},
-  	{usera:6, userb:7},
-  	{usera:6, userb:2},
-  	{usera:6, userb:2},
-  	{usera:6, userb:7},
-  	{usera:6, userb:2},
+  	{usera:2, userb:1},
+  	
   	])
