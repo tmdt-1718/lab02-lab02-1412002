@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20171016141239) do
     t.integer "usera"
     t.integer "userb"
     t.text "body"
+    t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171016141239) do
   create_table "friends", force: :cascade do |t|
     t.integer "usera"
     t.integer "userb"
+    t.boolean "accept", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

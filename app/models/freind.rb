@@ -1,2 +1,0 @@
-class Freind < ApplicationRecord
-end

@@ -21,9 +21,14 @@
 			<input type="text" name="" placeholder="search a friend" class="input-search">
 		</div>
 		<div class="friend-list">
+			<% if @friend %>
+
 			<% @friend.each do |key| %>
-				<% @user = User.find(key.userb) %>
-				<div class="friend-item">
+				<% if session[:user_id] == key.userb %>
+					<% @user = User.find(key.usera) %>
+				<% else @user = User.find(key.userb) %>
+				<% end %>
+				<div class="friend-item" id="<%= @user.id %>">
 					<div class="friend-id" style="display: none;">
 						<%= @user.id %>
 					</div>
@@ -32,23 +37,37 @@
 					</div>
 					<div class="friend-name">
 						<%= @user.name %>
+						<% @mess = Chat.where(usera:@user.id).where(userb:session[:user_id]).or(Chat.where(usera:session[:user_id]).where(userb:@user.id)).last() %>
+						<% @readcheck = Chat.where(usera:@user.id).where(userb:session[:user_id]).last() %>
+						<div class="preview-message <%if !@readcheck.read %>chuadoc<%end%>">
+							<%if @mess%>
+								<%= @mess.body%>
+							<%end%>
+							</div>
 					</div>
 					<div class="friend-remove">
 					</div>	
 				</div>
 			<%end%>
+			<%end%>
 		</div>
 		<div class="alluser-list">
 			<% @alluser.each do |key| %>
-				<div class="friend-item">
-					
+				<% if session[:user_id] == key.id %>
+					<% next %>
+				<% end %>
+				
+				<div class="friend-item" id="<%= key.id %>">
+					<div class="friend-id" style="display: none;">
+						<%= key.id %>
+					</div>
 					<div class="friend-avatar">
 						<%= key.name[0].upcase %>
 					</div>
 					<div class="friend-name">
 						<%= key.name %>
 					</div>
-						<% @check = Friend.where(usera:session[:user_id],userb:key.id).take%>
+						<% @check = Friend.where(usera:session[:user_id]).where(userb:key.id).or(Friend.where(usera:key.id).where(userb:session[:user_id])).take%>
 						<% if @check %>
 							<div class="friend-remove"></div>
 							<!-- DEL --> 
@@ -63,21 +82,90 @@
 	<div class="right-menu">
 		<div class="chat-friend-form">
 			<div class="current-friend-chat" style="display: none;">
-				<% @user = User.find(@friend[0].userb) %>
+				<% if @friend[0] %>
+					<% if session[:user_id]== @friend[0].userb %>
+						<% @user = User.find(@friend[0].usera) %>
+					<% else%>
+						<% @user = User.find(@friend[0].userb) %>
+					<%end%>
 				<%= @user.id %>
+			<%end%>
+
 			</div>
 			<div class="current-friend-name">
-				<%= @user.name %>
+				<% if @friend[0] %>
+					<%= @user.name %>
+				<%end%>
 			</div>
-
+			<div class="btn-friend-waiting">
+				<div class="friend-waiting-panel">
+					<div class="friend-waiting-content">
+					<div class="friend-waiting-title">Friend Requests</div>
+					<% if @friendWaiting %>
+					<% @friendWaiting.each do |key| %>
+						<% if session[:user_id] == key.userb %>
+							<% @user = User.find(key.usera) %>
+						<% end %>
+						<div class="friendWaiting-item" id="request<%= @user.id %>">
+							<div class="friendWaiting-id" style="display: none;">
+								<%= @user.id %>
+							</div>
+							<div class="friendWaiting-avatar">
+								<%= @user.name[0].upcase %>
+							</div>
+							<div class="friendWaiting-name">
+								<%= @user.name %>
+							</div>
+							<div class="friendWaiting-add">
+								Confirm
+							</div>
+							<div class="friendWaiting-remove">
+								Remove
+							</div>	
+						</div>
+					<%end%>
+					<%end%>
+					</div>
+				</div>
+			</div>
 			
 		</div>
 		<div class="chat-contents-form">
-			
+			<% if @friend[0] %>
+				<% if session[:user_id]== @friend[0].userb %>
+						<% @user = User.find(@friend[0].usera) %>
+				<% else%>
+						<% @user = User.find(@friend[0].userb) %>
+				<%end%>
+				<% @user.id %>
+				<% @chat = Chat.where(usera: session[:user_id]).where(userb: @user.id).or(Chat.where(usera: @user.id).where(userb: session[:user_id])).order('id DESC').limit(20) %>
+				<% @chat.reverse_each do |key| %>
+					<% if key.usera == session[:user_id]%>
+						<div class='chat-line-right'>
+							<div class='my-chat-class'><%= key.body %></div>
+						</div>
+					<% else %>
+						<div class='chat-line-left'>
+							<div class='my-chat-class'><%= key.body %></div>
+						</div>
+					<%end%>
+				<%end%>
+			<%end%>
+		</div>
+		<div class="seeen">
+			<% @mess = Chat.where(usera:@user.id).where(userb:session[:user_id]).or(Chat.where(usera:session[:user_id]).where(userb:@user.id)).last() %>
+			<% if @mess %>
+			<% if @mess.read %>
+			<div class="daxem" style="display: block;">Seen</div>
+			<%else%>
+			<div class="daxem">Seen</div>
+			<%end%>
+			<%end%>
 		</div>
 		<div class="chat-input-form">
-			<input type="text" name="" class="chat-input-text">
-			<div class="btn-send">Send</div>
+			<textarea class="chat-input-text"></textarea>
+			<!-- <input type="text" name="" class="chat-input-text"> -->
+			<div class="btn-send"></div>
 		</div>
 	</div>
 </div>

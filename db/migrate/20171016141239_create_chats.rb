@@ -4,7 +4,7 @@ class CreateChats < ActiveRecord::Migration[5.1]
       t.integer :usera
       t.integer :userb
       t.text :body
-
+      t.boolean :read, :default => false
       t.timestamps
     end
   end

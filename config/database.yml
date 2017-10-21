@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: lab02-1412002
+  database: lab022
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
