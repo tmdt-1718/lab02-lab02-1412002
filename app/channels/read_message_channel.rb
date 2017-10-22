@@ -8,7 +8,7 @@ class ReadMessageChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-  	result = Chat.where(usera: data['userb']).where(userb: data['usera'])
+  	result = Chat.where(usera: data['userb']).where(userb: data['usera']).where(read:false)
   	
   	result.update(read:true)
   	ActionCable.server.broadcast(

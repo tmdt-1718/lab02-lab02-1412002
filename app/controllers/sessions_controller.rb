@@ -23,4 +23,11 @@ class SessionsController < ApplicationController
   		log_out
     	redirect_to login_path
  	end
+    def home
+      if session[:user_id] 
+          redirect_to "/messenger"
+      else
+          redirect_to "/login"
+      end
+    end
 end
