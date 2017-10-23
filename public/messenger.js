@@ -27,7 +27,7 @@ var init_message = function() {
     reload_event();
 }
 var friend_select = function() {
-    $(".friend-item").on("click", function(e) {
+    $(".friend-list .friend-item").on("click", function(e) {
         $(".friend-item").removeClass("friend-active");
         $(e.currentTarget).addClass("friend-active");
         $(".current-friend-chat").html($(e.currentTarget).attr("id"));
@@ -60,7 +60,7 @@ var onChatRead = function() {
     });
 }
 var loadMessage = function(data) {
-    console.log(data);
+    // console.log(data);
     if(!data.length) return;
     var usera = $(".current-userid").text().trim();
 
