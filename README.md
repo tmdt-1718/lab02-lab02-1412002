@@ -3,7 +3,7 @@
 **Name of your app** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
-* [ ] **1412002** Dương Trường An (1412002)
+* [x] **1412002** Dương Trường An (1412002)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
 
 URL: **https://lab02-1412002.herokuapp.com**
