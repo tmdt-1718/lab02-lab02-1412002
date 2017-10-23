@@ -10,11 +10,17 @@
   crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&amp;subset=vietnamese" rel="stylesheet">
 
   </head>
-
-  <body style="font-family: 'Abel', sans-serif;">
+<style type="text/css">
+  @font-face
+{
+    font-family: font;
+    src: url("../Helvetica-Normal.ttf");
+}
+</style>
+  <body >
   	<div class="main">
     	<%= yield %>
   	</div>

@@ -60,7 +60,8 @@ var onChatRead = function() {
     });
 }
 var loadMessage = function(data) {
-    //console.log(data);
+    console.log(data);
+    if(!data.length) return;
     var usera = $(".current-userid").text().trim();
 
     data.reverse().map(key => {

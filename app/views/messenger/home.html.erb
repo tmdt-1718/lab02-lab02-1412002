@@ -39,7 +39,7 @@
 						<%= @user.name %>
 						<% @mess = Chat.where(usera:@user.id).where(userb:session[:user_id]).or(Chat.where(usera:session[:user_id]).where(userb:@user.id)).last() %>
 						<% @readcheck = Chat.where(usera:@user.id).where(userb:session[:user_id]).last() %>
-						<div class="preview-message <%if !@readcheck.read %>chuadoc<%end%>">
+						<div class="preview-message <%if @readcheck %><%if !@readcheck.read %>chuadoc<%end%><%end%>">
 							<%if @mess%>
 								<%= @mess.body%>
 							<%end%>
