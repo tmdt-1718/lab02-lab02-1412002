@@ -80,7 +80,7 @@ var loadMessage = function(data) {
 
 var send_mess = function() {
     $(".btn-send").on("click", function(e) {
-        var mess = $(".chat-input-text").val();
+        var mess = htmlentities($(".chat-input-text").val(), ENT_QUOTES, "UTF-8");
         var usera = $(".current-userid").text().trim();
         var userb = $(".current-friend-chat").text().trim();
 
@@ -95,7 +95,7 @@ var send_mess = function() {
     });
     $(".chat-input-text").on("keydown", function(e) {
         if (e.which == 13) {
-            var mess = $(".chat-input-text").val();
+            var mess = htmlentities($(".chat-input-text").val(), ENT_QUOTES, "UTF-8");
             var usera = $(".current-userid").text().trim();
             var userb = $(".current-friend-chat").text().trim();
 
