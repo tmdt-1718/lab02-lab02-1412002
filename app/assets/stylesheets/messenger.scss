@@ -410,16 +410,26 @@ width: calc(100% - 30px);
     justify-content: flex-start;
 }
 .chat-line-right .my-chat-class{
-    background: #eaeff3;
+    background: #f1f0f0;
     margin: 3px 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: fit-content;
+    color: #4b4c50;
 }
 .chat-line-left .my-chat-class{
-    background: #8dcbf4;
+    background-color: #417fff;
     margin: 3px 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: fit-content;
+    color: #fff;
+}
+
+.thongbao{
+    height: 40px;
+    line-height: 40px;
+    opacity: 0.5;
+    font-size: 12px;
+    padding-left: 20px;
 }

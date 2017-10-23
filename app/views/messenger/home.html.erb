@@ -41,7 +41,8 @@
 						<% @readcheck = Chat.where(usera:@user.id).where(userb:session[:user_id]).last() %>
 						<div class="preview-message <%if @readcheck %><%if !@readcheck.read %>chuadoc<%end%><%end%>">
 							<%if @mess%>
-								<%= @mess.body%>
+								<% coder = HTMLEntities.new%>
+								<%= coder.decode(@mess.body)%>
 							<%end%>
 							</div>
 					</div>
@@ -142,11 +143,17 @@
 				<% @chat.reverse_each do |key| %>
 					<% if key.usera == session[:user_id]%>
 						<div class='chat-line-right'>
-							<div class='my-chat-class'><%= key.body %></div>
+							<div class='my-chat-class'>
+								<% coder = HTMLEntities.new%>
+								<%= coder.decode(key.body)%>
+								</div>
 						</div>
 					<% else %>
 						<div class='chat-line-left'>
-							<div class='my-chat-class'><%= key.body %></div>
+							<div class='my-chat-class'>
+								<% coder = HTMLEntities.new%>
+								<%= coder.decode(key.body)%>
+								</div>
 						</div>
 					<%end%>
 				<%end%>
@@ -168,3 +175,4 @@
 		</div>
 	</div>
 </div>
+<div class="thongbao">Lưu ý: hiện tại bộ gõ Telex mặc định trên macOS bị lỗi khi sử dụng với Chrome!</div>
