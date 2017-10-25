@@ -6,6 +6,8 @@
 			<%@user = User.find(session[:user_id])  %>
 			<%= @user.name  %>
 			</div>
+			<div class="logout-class"><a href="/logout">logout</a></div>
+
 		<div class="current-userid" style="display: none;">
 			<%= @user.id %>
 			</div>
@@ -163,7 +165,9 @@
 			<% @mess = Chat.where(usera:@user.id).where(userb:session[:user_id]).or(Chat.where(usera:session[:user_id]).where(userb:@user.id)).last() %>
 			<% if @mess %>
 			<% if @mess.read %>
-			<div class="daxem" style="display: block;">Seen</div>
+			<% @TZ = "+07:00" %>
+
+			<div class="daxem" style="display: block;"><%=@mess.updated_at.in_time_zone('Asia/Bangkok') %></div>
 			<%else%>
 			<div class="daxem">Seen</div>
 			<%end%>

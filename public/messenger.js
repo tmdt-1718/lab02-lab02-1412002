@@ -73,9 +73,10 @@ var loadMessage = function(data) {
     });
     $(".chat-contents-form").animate({ scrollTop: $('.chat-contents-form').height() + 12000 }, 300);
     if (data[data.length - 1].read) {
-        $(".daxem").show();
+        $(".daxem").show().html("Seen at "+new Date(Date.parse(data[data.length - 1].updated_at)).toLocaleString());
+    }else{
+        $(".daxem").hide();
     }
-
 }
 
 var send_mess = function() {
@@ -286,9 +287,10 @@ var friend_tools = function() {
 }
 
 var update_readMessage = function(data) {
+    // console.log(data);
     var f = $(".current-friend-chat").text().trim();
     if (f == data.usera) {
-        $(".daxem").show();
+        $(".daxem").show().html("Seen at " + (new Date).toLocaleString());
     };
     var usera = $(".current-userid").text().trim();
 

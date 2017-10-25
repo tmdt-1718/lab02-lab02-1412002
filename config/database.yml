@@ -29,6 +29,7 @@ development:
 #   <<: *default
 #   username: lab02
 #   password: lab02
+#   database: lab022
 #   host: localhost
 #   port: 5432
 
